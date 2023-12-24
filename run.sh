@@ -1,6 +1,7 @@
 #! /bin/sh
 
 # load secrets conditionally
+cp /opt/app/rel/logflare/cloud/gcloud.json /opt/app/rel/logflare/bin/
 if [ -f /tmp/.secrets.env ]
 then
     echo '/tmp/.secrets.env file present, loading secrets...';
@@ -24,7 +25,7 @@ then
 fi
 
 if [[ "$OVERRIDE_MAGIC_COOKIE" ]]
-then 
+then
     echo "OVERRIDE_MAGIC_COOKIE is set, using it..."
     export MAGIC_COOKIE=$OVERRIDE_MAGIC_COOKIE
     echo $MAGIC_COOKIE > /tmp/.magic_cookie
