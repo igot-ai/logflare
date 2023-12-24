@@ -40,5 +40,5 @@ RUN cp -r /opt/app/rel/logflare/bin/priv/static /opt/app/rel/logflare/lib/logfla
 RUN rm -r /opt/app/rel/logflare/bin/priv
 
 WORKDIR /opt/app/rel/logflare/bin
-COPY run.sh ./run.sh
+COPY run.sh /opt/app/rel/logflare/bin/run.sh
 CMD ["sh", "run.sh"]
