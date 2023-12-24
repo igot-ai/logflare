@@ -40,5 +40,6 @@ RUN cp -r /opt/app/rel/logflare/bin/priv/static /opt/app/rel/logflare/lib/logfla
 RUN rm -r /opt/app/rel/logflare/bin/priv
 
 WORKDIR /opt/app/rel/logflare/bin
-COPY run.sh /opt/app/rel/logflare/bin/run.sh
+COPY run.sh /usr/local/bin/start-analytics
+RUN chmod +x /usr/local/bin/start-analytics
 CMD ["sh", "run.sh"]
